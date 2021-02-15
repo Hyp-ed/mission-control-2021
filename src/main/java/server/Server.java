@@ -151,7 +151,7 @@ public class Server implements Runnable {
     isCompiling = true; // The compiling process start
 
     String DIR_PATH = FileSystems.getDefault().getPath("./").toAbsolutePath().toString();
-    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1) + "hyped-pod_code";
+    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1); // change this part for RELEASE
 
     ArrayList<String> command = new ArrayList<String>();
     // Suppose to be make -j, but it's so buggy so leave it as make for now
@@ -249,7 +249,7 @@ public class Server implements Runnable {
   
   public boolean isHypedExist() {
     String DIR_PATH = FileSystems.getDefault().getPath("./").toAbsolutePath().toString();
-    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1) + "hyped-pod_code/hyped"; // change this part for RELEASE
+    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1) + "hyped"; // change this part for RELEASE
 
     File HYPED_CODE = new File(HYPED_PATH);
     return HYPED_CODE.exists();
@@ -273,7 +273,7 @@ public class Server implements Runnable {
 
   public void debugRun(JSONArray flags) {
     String DIR_PATH = FileSystems.getDefault().getPath("./").toAbsolutePath().toString();
-    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1) + "hyped-pod_code"; // change this part for RELEASE
+    String HYPED_PATH = DIR_PATH.substring(0, DIR_PATH.length() - 1); // change this part for RELEASE
     String os = System.getProperty("os.name").substring(0,3);
 
     ArrayList<String> command = new ArrayList<String>();
