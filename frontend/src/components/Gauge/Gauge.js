@@ -19,7 +19,40 @@ export default function Gauge(props) {
 
   useEffect(() => {
     if (props.telemetryData === null) return;
-    var parsedData = props.telemetryData.crucial_data.find(o => o.name === props.gaugeId);
+
+    var name = props.gaugeId;
+
+    try {
+      var parsedData = props.telemetryData.crucial_data.find(o => o.name === props.gaugeId);
+    }
+    catch(err) {
+      if (name == "acceleration") {
+        var parsedData = {
+        "name": "acceleration",
+        "min": -50.0,
+        "max": 50.0,
+        "unit": "m/s^2",
+        "value": 0
+      };
+      } else if (name == "velocity") {
+        var parsedData = {
+          "name": "velocity",
+          "min": 0.0,
+          "max": 250.0,
+          "unit": "m/s",
+          "value": 1
+        };
+      } else if (name == "distance") {
+          var parsedData = {
+          "name": "distance",
+          "min": 0.0,
+          "max": 1250.0,
+          "unit": "m",
+          "value": 0
+        };
+      }
+    }
+
     setData(parsedData);
     setProgress(395 - 197 * ((parsedData.value - parsedData.min) / (parsedData.max - parsedData.min)));
   }, [props.telemetryData, props.gaugeId]);
