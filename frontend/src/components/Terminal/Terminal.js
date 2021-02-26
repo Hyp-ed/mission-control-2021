@@ -183,9 +183,9 @@ export default function Terminal(props) {
             }}
             ></Button>
             {open === "log" && 
-              <div className="dropdown">
+              <SimpleBar className="dropdown" forceVisible="y" autoHide={false}>
                 {logTypeOptions}
-              </div>
+              </SimpleBar>
             }
           </div>
           <div className="dropdown-group">
@@ -201,10 +201,10 @@ export default function Terminal(props) {
               }}
             ></Button>
             {open === "sub" && 
-                <div className="dropdown">
-                  {submoduleOptions}
-                </div>
-              }
+              <SimpleBar className="dropdown" forceVisible="y" autoHide={false}>
+                {submoduleOptions}
+              </SimpleBar>
+            }
           </div>
         </div>
         <div className="footer other">

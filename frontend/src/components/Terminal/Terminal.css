@@ -93,6 +93,7 @@ a {
     border: 1px solid #474a4d;
     padding: 9px;
     width: calc(100% - 18px);
+    height: 700%;
     bottom: 100%;
 }
 
