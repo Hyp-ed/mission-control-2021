@@ -57,6 +57,7 @@ input {
 }
 
 .footer button {
+    z-index: 2;
     border-radius: 6px;
     color: #000;    
     background-color: #FFF;
@@ -93,7 +94,12 @@ a {
     border: 1px solid #474a4d;
     padding: 9px;
     width: calc(100% - 18px);
+    height: 700%;
     bottom: 100%;
+}
+
+.simplebar-wrapper {
+    z-index: 1;
 }
 
 .menu-item {
